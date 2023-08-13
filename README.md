@@ -21,7 +21,6 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Validar que dirección sólo admite los siguientes valores: N,S,E,W
 - Validar que un Rover se puede mover hacia adelante
 - Validar que un Rover se puede mover hacia atrás
 - Validar que un Rover se puede mover hacia la derecha
@@ -32,6 +31,7 @@ Testea para probar el comportamiento, no para probar la implementación
 # Casos completados
 - Validar que un Rover se crea por defecto en el centro del plano en dirección norte
 - Validar que un Rover se puede crear con posición y dirección
+- Validar que dirección sólo admite los siguientes valores: N,S,E,W
 
 # Notas
 - Tiene sentido hasta cierto punto mantener la navegación tipo grilla porque aunque en un globo terráqueo los segmentos de posición en los polos no tienen 4 aristas sino 3 estos no es más que casos de un cuadrado especial en el que una de sus aristas tiende a tener una longitud cercana a cero, es cuestión de percepción (como la percepción del espacio/tiempo en la teoría de la relatividad)
