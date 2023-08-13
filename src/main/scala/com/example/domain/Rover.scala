@@ -1,6 +1,6 @@
 package com.example.domain
 
-case class Rover(abscissa: Seq[Int], ordinate: Seq[Int], coordinates: (Int, Int), direction: Directions.Value) {
+case class Rover(abscissa: Seq[Int], ordinate: Seq[Int], coordinates: (Int, Int), direction: Direction) {
 
 }
 
@@ -11,7 +11,7 @@ object Rover {
       abscissa,
       ordinate,
       (abscissa((abscissa.size / 2).ceil.toInt), ordinate((ordinate.size / 2).ceil.toInt)),
-      Directions.N
+      Direction.N
     )
 
 }

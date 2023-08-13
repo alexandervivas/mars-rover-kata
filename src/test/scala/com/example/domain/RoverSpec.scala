@@ -14,14 +14,14 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     val rover: Rover = Rover(abscissa, ordinate)
 
     assertThat(rover.coordinates).isEqualTo((3, 3))
-    assertThat(rover.direction).isEqualTo(Directions.N)
+    assertThat(rover.direction).isEqualTo(Direction.N)
   }
 
   test("Validar que un Rover se puede crear con posición y dirección") {
-    val rover: Rover = Rover(abscissa, ordinate, (2, 2), Directions.S)
+    val rover: Rover = Rover(abscissa, ordinate, (2, 2), Direction.S)
 
     assertThat(rover.coordinates).isEqualTo((2, 2))
-    assertThat(rover.direction).isEqualTo(Directions.S)
+    assertThat(rover.direction).isEqualTo(Direction.S)
   }
 
 }
