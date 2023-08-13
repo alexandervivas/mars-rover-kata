@@ -21,8 +21,8 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Validar que un Rover se crea por defecto en el centro de la primera cara del planeta mirando en dirección norte
-- Validar que un Rover se puede crear con posición y dirección pre establecidas
+- Validar que un Rover se crea por defecto en el centro del plano en dirección norte
+- Validar que un Rover se puede crear con posición y dirección
 - Validar que un Rover se puede mover hacia adelante
 - Validar que un Rover se puede mover hacia atrás
 - Validar que un Rover se puede mover hacia la derecha
