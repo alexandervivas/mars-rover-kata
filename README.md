@@ -21,20 +21,21 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Validar que un Rover mantiene su posición inicial y dirección cuando recién se crea y no se le dan otros comandos
+- Validar que un Rover se crea por defecto en el centro de la primera cara del planeta mirando en dirección norte
+- Validar que un Rover se puede crear con posición y dirección pre establecidas
 - Validar que un Rover se puede mover hacia adelante
 - Validar que un Rover se puede mover hacia atrás
 - Validar que un Rover se puede mover hacia la derecha
 - Validar que un Rover se puede mover hacia la izquierda
 - Validar que al llegar a un borde, el Rover aparece en la segunda grilla que corresponde
-- 
+
 
 # Casos completados
 
 
 # Notas
-- Tiene sentido hasta cierto punto mantener la navegación tipo grilla porque aunque en un globo terráqueo los segmentos de posición en los polos no tienen 4 aristas sino 3 esto no es más que un cuadrado especial en el que una de sus aristas tiende a cero, es cuestión de percepción (como la percepción del espacio/tiempo en la teoría de la relatividad)
-- Los movimientos dentro de este esquema tendrían sentido si al llegar a un polo auntomáticamente se cambia la dirección, por ende los siguientes movimientos sucederían en la otra cara del planeta
+- Tiene sentido hasta cierto punto mantener la navegación tipo grilla porque aunque en un globo terráqueo los segmentos de posición en los polos no tienen 4 aristas sino 3 estos no es más que casos de un cuadrado especial en el que una de sus aristas tiende a tener una longitud cercana a cero, es cuestión de percepción (como la percepción del espacio/tiempo en la teoría de la relatividad)
+- Los movimientos dentro de este esquema tendrían sentido si al llegar a un polo automáticamente se cambia la dirección, por ende los siguientes movimientos sucederían en la otra cara del planeta
 - La grilla tendrá dos caras para simular los movimientos del Rover en el lado opuesto del planeta
 - En el lado opuesto del planeta todos los movimientos son opuestos y se mantendrán así hasta alcanzar nuevamente un borde de la grilla
 
