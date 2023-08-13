@@ -64,4 +64,9 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     assertThat(rover.direction).isEqualTo(Direction.W)
   }
 
+  test("Validar que un Rover se puede mover hacia atrás estando en dirección N") {
+    assertThat(rover.coordinates).isEqualTo(point)
+    assertThat(rover.direction).isEqualTo(Direction.N)
+  }
+
 }
