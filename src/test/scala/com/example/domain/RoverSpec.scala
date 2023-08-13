@@ -1,6 +1,5 @@
 package com.example.domain
 
-import com.example.exeptions.InvalidArgumentException
 import org.assertj.core.api.Assertions.assertThat
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatestplus.mockito.MockitoSugar
@@ -15,20 +14,14 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     val rover: Rover = Rover(abscissa, ordinate)
 
     assertThat(rover.coordinates).isEqualTo((3, 3))
-    assertThat(rover.direction).isEqualTo('N')
+    assertThat(rover.direction).isEqualTo(Directions.N)
   }
 
   test("Validar que un Rover se puede crear con posición y dirección") {
-    val rover: Rover = Rover(abscissa, ordinate, (2, 2), 'S')
+    val rover: Rover = Rover(abscissa, ordinate, (2, 2), Directions.S)
 
     assertThat(rover.coordinates).isEqualTo((2, 2))
-    assertThat(rover.direction).isEqualTo('S')
-  }
-
-  test("Validar que dirección sólo admite los siguientes valores: N,S,E,W") {
-    intercept[InvalidArgumentException] {
-      Rover(abscissa, ordinate, (0, 0), 'X')
-    }
+    assertThat(rover.direction).isEqualTo(Directions.S)
   }
 
 }
