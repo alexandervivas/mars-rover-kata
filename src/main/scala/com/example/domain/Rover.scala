@@ -15,12 +15,12 @@ case class Rover(abscissa: Seq[Int], ordinate: Seq[Int], coordinates: Point, dir
 
 object Rover {
 
-  def apply(abscissa: Seq[Int], ordinate: Seq[Int]): Rover =
+  def apply(abscissa: Seq[Int], ordinate: Seq[Int], direction: Direction = Direction.N): Rover =
     Rover(
       abscissa,
       ordinate,
       Point(abscissa((abscissa.size / 2).ceil.toInt), ordinate((ordinate.size / 2).ceil.toInt)),
-      Direction.N
+      direction
     )
 
 }
