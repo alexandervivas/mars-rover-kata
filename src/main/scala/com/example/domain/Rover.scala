@@ -1,6 +1,7 @@
 package com.example.domain
 
 case class Rover(abscissa: Seq[Int], ordinate: Seq[Int], coordinates: (Int, Int), direction: Direction) {
+  def moveForward() = ???
 
 }
 
