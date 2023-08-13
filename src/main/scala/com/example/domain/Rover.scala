@@ -1,13 +1,13 @@
 package com.example.domain
 
-case class Rover(abscissa: Seq[Int], ordinate: Seq[Int], coordinates: (Int, Int), direction: Direction) {
+case class Rover(abscissa: Seq[Int], ordinate: Seq[Int], coordinates: Point, direction: Direction) {
 
   def moveForward(): Rover = copy(
     coordinates = direction match {
-      case Direction.N => (coordinates._1, coordinates._2 - 1)
-      case Direction.S => (coordinates._1, coordinates._2 + 1)
-      case Direction.E => (coordinates._1 + 1, coordinates._2)
-      case Direction.W => (coordinates._1 - 1, coordinates._2)
+      case Direction.N => coordinates.copy(y = coordinates.y - 1)
+      case Direction.S => coordinates.copy(y = coordinates.y + 1)
+      case Direction.E => coordinates.copy(x = coordinates.y + 1)
+      case Direction.W => coordinates.copy(x = coordinates.x - 1)
     }
   )
 
@@ -19,7 +19,7 @@ object Rover {
     Rover(
       abscissa,
       ordinate,
-      (abscissa((abscissa.size / 2).ceil.toInt), ordinate((ordinate.size / 2).ceil.toInt)),
+      Point(abscissa((abscissa.size / 2).ceil.toInt), ordinate((ordinate.size / 2).ceil.toInt)),
       Direction.N
     )
 

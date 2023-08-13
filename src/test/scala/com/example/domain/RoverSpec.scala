@@ -11,23 +11,29 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
   val ordinate: Seq[Int] = Seq(1, 2, 3, 4, 5)
 
   test("Validar que un Rover se crea por defecto en el centro del plano en dirección norte") {
+    val point: Point = Point(3, 3)
+
     val rover: Rover = Rover(abscissa, ordinate)
 
-    assertThat(rover.coordinates).isEqualTo((3, 3))
+    assertThat(rover.coordinates).isEqualTo(point)
     assertThat(rover.direction).isEqualTo(Direction.N)
   }
 
   test("Validar que un Rover se puede crear con posición y dirección") {
-    val rover: Rover = Rover(abscissa, ordinate, (2, 2), Direction.S)
+    val point: Point = Point(2, 2)
 
-    assertThat(rover.coordinates).isEqualTo((2, 2))
+    val rover: Rover = Rover(abscissa, ordinate, point, Direction.S)
+
+    assertThat(rover.coordinates).isEqualTo(point)
     assertThat(rover.direction).isEqualTo(Direction.S)
   }
 
   test("Validar que un Rover se puede mover hacia adelante") {
+    val point: Point = Point(3, 2)
+
     val rover: Rover = Rover(abscissa, ordinate).moveForward()
 
-    assertThat(rover.coordinates).isEqualTo((3, 2))
+    assertThat(rover.coordinates).isEqualTo(point)
     assertThat(rover.direction).isEqualTo(Direction.N)
   }
 
