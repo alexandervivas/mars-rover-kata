@@ -4,11 +4,17 @@ import org.assertj.core.api.Assertions.assertThat
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatestplus.mockito.MockitoSugar
 
+import scala.collection.immutable.Seq
+
 class RoverSpec extends AnyFunSuite with MockitoSugar {
+  val abscissa: Seq[Int] = Seq(1, 2, 3, 4, 5)
+  val ordinate: Seq[Int] = Seq(1, 2, 3, 4, 5)
 
   test("Validar que un Rover se crea por defecto en el centro del plano en dirección norte") {
 
-    assertThat(rover.position).isEqualTo((3, 3))
+    val rover: Rover = Rover(abscissa, ordinate)
+
+    assertThat(rover.coordinates).isEqualTo((3, 3))
     assertThat(rover.direction).isEqualTo('N')
 
   }
