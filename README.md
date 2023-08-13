@@ -21,7 +21,10 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Validar que un Rover se puede mover hacia adelante
+- Validar que un Rover se puede mover hacia adelante en dirección N
+- Validar que un Rover se puede mover hacia adelante en dirección S
+- Validar que un Rover se puede mover hacia adelante en dirección E
+- Validar que un Rover se puede mover hacia adelante en dirección W
 - Validar que un Rover se puede mover hacia atrás
 - Validar que un Rover se puede mover hacia la derecha
 - Validar que un Rover se puede mover hacia la izquierda
