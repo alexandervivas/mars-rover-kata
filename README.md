@@ -25,9 +25,18 @@ Testea para probar el comportamiento, no para probar la implementación
 - Validar que un Rover se puede mover hacia adelante en dirección S
 - Validar que un Rover se puede mover hacia adelante en dirección E
 - Validar que un Rover se puede mover hacia adelante en dirección W
-- Validar que un Rover se puede mover hacia atrás
-- Validar que un Rover se puede mover hacia la derecha
-- Validar que un Rover se puede mover hacia la izquierda
+- Validar que un Rover se puede mover hacia atrás estando en dirección N
+- Validar que un Rover se puede mover hacia atrás estando en dirección S
+- Validar que un Rover se puede mover hacia atrás estando en dirección E
+- Validar que un Rover se puede mover hacia atrás estando en dirección W
+- Validar que un Rover se puede mover hacia la derecha estando en dirección N
+- Validar que un Rover se puede mover hacia la derecha estando en dirección S
+- Validar que un Rover se puede mover hacia la derecha estando en dirección E
+- Validar que un Rover se puede mover hacia la derecha estando en dirección W
+- Validar que un Rover se puede mover hacia la izquierda estando en dirección N
+- Validar que un Rover se puede mover hacia la izquierda estando en dirección S
+- Validar que un Rover se puede mover hacia la izquierda estando en dirección E
+- Validar que un Rover se puede mover hacia la izquierda estando en dirección W
 - Validar que al llegar a un borde, el Rover aparece en la segunda grilla que corresponde
 
 
