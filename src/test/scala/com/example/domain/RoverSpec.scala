@@ -24,4 +24,10 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     assertThat(rover.direction).isEqualTo('S')
   }
 
+  test("Validar que dirección sólo admite los siguientes valores: N,S,E,W") {
+    intercept[com.example.exceptions.InvalidArgumentException] {
+      Rover(abscissa, ordinate, (0, 0), 'X')
+    }
+  }
+
 }
