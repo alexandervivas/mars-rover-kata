@@ -49,7 +49,7 @@ Testea para probar el comportamiento, no para probar la implementación
 - Tiene sentido hasta cierto punto mantener la navegación tipo grilla porque aunque en un globo terráqueo los segmentos de posición en los polos no tienen 4 aristas sino 3 estos no es más que casos de un cuadrado especial en el que una de sus aristas tiende a tener una longitud cercana a cero, es cuestión de percepción (como la percepción del espacio/tiempo en la teoría de la relatividad)
 - Los movimientos dentro de este esquema tendrían sentido si al llegar a un polo automáticamente se cambia la dirección, por ende los siguientes movimientos sucederían en la otra cara del planeta
 - La grilla tendrá dos caras para simular los movimientos del Rover en el lado opuesto del planeta
-- En el lado opuesto del planeta todos los movimientos son opuestos y se mantendrán así hasta alcanzar nuevamente un borde de la grilla
+- En el lado opuesto del planeta los movimientos son opuestos y se mantendrán así hasta alcanzar nuevamente un borde de la grilla
 
 # Dudas
 - Cambio de dirección al llegar al polo norte?
