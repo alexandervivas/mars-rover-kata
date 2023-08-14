@@ -9,17 +9,19 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
 
   def printMap: Seq[Seq[Char]] = plane.drawPoint(coordinates, direction.value)
 
-  def processCommands(commands: Seq[Char]): Rover = if(commands.isEmpty) {
-    this
-  } else {
-    (commands.head match {
+  private def processCommand(command: Char): Rover =
+    command match {
       case 'f' => moveForward()
       case 'b' => moveBackward()
       case 'r' => turnRight()
       case 'l' => turnLeft()
-    })
-      .processCommands(commands.tail)
-  }
+    }
+
+  def processCommands(commands: Seq[Char]): Rover =
+    commands match {
+      case Nil => this
+      case head :: tail => processCommand(head).processCommands(tail)
+    }
 
   def turnLeft(): Rover = copy(
     direction = wheel.turnLeft.direction
