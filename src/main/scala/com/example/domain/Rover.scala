@@ -2,7 +2,7 @@ package com.example.domain
 
 import com.example.exeptions.InvalidCommandException
 
-case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
+case class Rover(plane: Plane, coordinates: Point, direction: Direction = Direction.N, sensor: Sensor = Sensor()) {
 
   private lazy val wheel: Wheel = Wheel(direction)
 
@@ -27,9 +27,8 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
       throw new InvalidCommandException
     }
 
-  def processCommands(commands: Seq[Char]): Rover = {
-    val obstacleAhead: Boolean = true
-    if(obstacleAhead) {
+  def processCommands(commands: Seq[Char]): Rover =
+    if(sensor.obstacleAhead) {
       println(s"Obstacle ahead detected, dropping the sequence of commands at coordinates: $coordinates")
       this
     } else {
@@ -40,7 +39,6 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
             .processCommands(tail)
       }
     }
-  }
 
   def turnLeft(): Rover = copy(direction = wheel.turnLeft.direction)
 
@@ -63,16 +61,5 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
       case Direction.W => coordinates.right
     }
   )
-
-}
-
-object Rover {
-
-  def apply(plane: Plane, direction: Direction = Direction.N): Rover =
-    Rover(
-      plane,
-      Point((plane.width / 2F).ceil.toInt, (plane.height / 2F).ceil.toInt),
-      direction
-    )
 
 }
