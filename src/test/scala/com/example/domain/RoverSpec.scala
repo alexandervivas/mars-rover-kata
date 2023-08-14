@@ -171,7 +171,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     assertThat(rover.direction).isEqualTo(Direction.S)
   }
 
-  test("El Rover debe poder imprimir un mapa de su ubicación actual") {
+  test("Imprimir un mapa de ubicación y dirección del Rover") {
     val rover: Rover = Rover(plane)
 
     assertThat(rover.printMap).isEqualTo(

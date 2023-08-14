@@ -21,8 +21,6 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Imprimir un mapa de ubicación del Rover
-- Indicar la dirección del Rover en el mapa
 - Validar que al llegar a un borde, el Rover aparece en la segunda grilla que corresponde (?)
 
 
@@ -46,6 +44,7 @@ Testea para probar el comportamiento, no para probar la implementación
 - Validar que un Rover se puede mover hacia la izquierda estando en dirección S
 - Validar que un Rover se puede mover hacia la izquierda estando en dirección E
 - Validar que un Rover se puede mover hacia la izquierda estando en dirección W
+- Imprimir un mapa de ubicación y dirección del Rover
 
 # Notas
 - Tiene sentido hasta cierto punto mantener la navegación tipo grilla porque aunque en un globo terráqueo los segmentos de posición en los polos no tienen 4 aristas sino 3 estos no es más que casos de un cuadrado especial en el que una de sus aristas tiende a tener una longitud cercana a cero, es cuestión de percepción (como la percepción del espacio/tiempo en la teoría de la relatividad)
