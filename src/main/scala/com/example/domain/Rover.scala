@@ -1,11 +1,10 @@
 package com.example.domain
 
-case class Rover(abscissa: Seq[Int], ordinate: Seq[Int], coordinates: Point, direction: Direction) {
+case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
 
   private lazy val wheel: Wheel = Wheel(direction)
-  private lazy val map: Seq[Seq[Char]] = Seq.fill(abscissa.size)(Seq.fill(ordinate.size)('.'))
 
-  def printMap: Seq[Seq[Char]] = map.updated(coordinates.x - 1, map(coordinates.x - 1).updated(coordinates.y - 1, 'X'))
+  def printMap: Seq[Seq[Char]] = plane.drawPoint(coordinates, direction.value)
 
   def moveLeft(): Rover = copy(
     direction = wheel.turnLeft.direction
@@ -37,11 +36,10 @@ case class Rover(abscissa: Seq[Int], ordinate: Seq[Int], coordinates: Point, dir
 
 object Rover {
 
-  def apply(abscissa: Seq[Int], ordinate: Seq[Int], direction: Direction = Direction.N): Rover =
+  def apply(plane: Plane, direction: Direction = Direction.N): Rover =
     Rover(
-      abscissa,
-      ordinate,
-      Point(abscissa((abscissa.size / 2).ceil.toInt), ordinate((ordinate.size / 2).ceil.toInt)),
+      plane,
+      Point((plane.width / 2F).ceil.toInt, (plane.height / 2F).ceil.toInt),
       direction
     )
 
