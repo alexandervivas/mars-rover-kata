@@ -12,9 +12,7 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
   def printMap: Seq[Seq[Char]] = plane.drawPoint(coordinates, direction.value)
 
   private def processCommand(command: Char): Rover = {
-    if(!Seq('f', 'b', 'r', 'l').contains(command)) {
-      throw new InvalidCommandException
-    }
+    ensureCommandIsValid(command)
 
     command match {
       case 'f' => moveForward()
@@ -23,6 +21,11 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
       case 'l' => turnLeft()
     }
   }
+
+  private def ensureCommandIsValid(command: Char): Unit =
+    if (!Seq('f', 'b', 'r', 'l').contains(command)) {
+      throw new InvalidCommandException
+    }
 
   def processCommands(commands: Seq[Char]): Rover =
     commands match {
