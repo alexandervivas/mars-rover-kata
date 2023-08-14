@@ -2,14 +2,14 @@ package com.example.domain
 
 import com.example.exeptions.InvalidCommandException
 
-case class Rover(plane: Plane, coordinates: Point, direction: Direction = Direction.N, sensor: Sensor = Sensor()) {
+case class Rover(planet: Planet, coordinates: Point, direction: Direction = Direction.N, sensor: Sensor = Sensor()) {
 
   private lazy val wheel: Wheel = Wheel(direction)
 
   // log the current status in each step
   println("\n" + printMap.map(_.mkString(" ")).mkString("\n") + "\n")
 
-  def printMap: Seq[Seq[Char]] = plane.drawPoint(coordinates, direction.value)
+  def printMap: Seq[Seq[Char]] = planet.drawPoint(coordinates, direction.value)
 
   private def processCommand(command: Char): Rover = {
     ensureCommandIsValid(command)

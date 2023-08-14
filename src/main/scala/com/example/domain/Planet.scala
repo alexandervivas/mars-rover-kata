@@ -1,6 +1,6 @@
 package com.example.domain
 
-case class Plane(width: Int, height: Int) {
+case class Planet(width: Int, height: Int) {
 
   private val emptySpot: Char = '.'
   private lazy val map: Seq[Seq[Char]] = Seq.fill(height)(Seq.fill(width)(emptySpot))

@@ -21,8 +21,13 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Un Rover debe abortar una serie de comandos al reconocer un obstáculo
-
+- El mapa debe incluir dos caras para representar el recorrido del Rover en ambas caras de un planeta
+- Ambas caras del planeta deben imprimirse con los puntos cardinales en la misma posición
+- Las caras de un planeta deben poder distinguirse en la impresión
+- Si el rover llega al polo norte debe reaparecer en la cara opuesta del planeta
+- Si se llega a la cara opuesta por el polo norte, el Rover debe cambiar su dirección hacia el sur
+- Si el rover llega al polo sur debe reaparecer en la cara opuesta del planeta
+- Si se llega a la cara opuesta por el polo sur, el Rover debe cambiar su dirección hacia el norte
 
 # Casos completados
 - Validar que un Rover se crea por defecto en el centro del plano en dirección norte
@@ -47,6 +52,7 @@ Testea para probar el comportamiento, no para probar la implementación
 - Imprimir un mapa de ubicación y dirección del Rover
 - Un Rover debe poder reaccionar a una serie de comandos (f,b,l,r)
 - Un Rover debe lanzar una excepción si recibe un comando desconocido
+- Un Rover debe abortar una serie de comandos al reconocer un obstáculo
 
 # Notas
 - Tiene sentido hasta cierto punto mantener la navegación tipo grilla porque aunque en un globo terráqueo los segmentos de posición en los polos no tienen 4 aristas sino 3 estos no es más que casos de un cuadrado especial en el que una de sus aristas tiende a tener una longitud cercana a cero, es cuestión de percepción (como la percepción del espacio/tiempo en la teoría de la relatividad)
