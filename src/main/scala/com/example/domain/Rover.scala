@@ -30,16 +30,14 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
   def processCommands(commands: Seq[Char]): Rover =
     commands match {
       case Nil => this
-      case head :: tail => processCommand(head).processCommands(tail)
+      case head :: tail =>
+        processCommand(head)
+          .processCommands(tail)
     }
 
-  def turnLeft(): Rover = copy(
-    direction = wheel.turnLeft.direction
-  )
+  def turnLeft(): Rover = copy(direction = wheel.turnLeft.direction)
 
-  def turnRight(): Rover = copy(
-    direction = wheel.turnRight.direction
-  )
+  def turnRight(): Rover = copy(direction = wheel.turnRight.direction)
 
   def moveForward(): Rover = copy(
     coordinates = direction match {
