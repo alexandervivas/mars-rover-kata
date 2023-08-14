@@ -4,6 +4,8 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
 
   private lazy val wheel: Wheel = Wheel(direction)
 
+  println("\n\n" + printMap.map(_.mkString(" ")).mkString("\n") + "\n\n")
+
   def printMap: Seq[Seq[Char]] = plane.drawPoint(coordinates, direction.value)
 
   def turnLeft(): Rover = copy(
