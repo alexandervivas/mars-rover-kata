@@ -21,12 +21,10 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Un Rover debe poder reaccionar a una serie de comandos (f,b,l,r)
 - Un Rover debe lanzar una excepción si recibe un comando desconocido
 - Un Plano debe poder contener obstáculos
 - Un Rover debe poder reconocer un obstáculo
 - Un Rover debe abortar una serie de comandos al reconocer un obstáculo
-- 
 
 
 # Casos completados
@@ -50,6 +48,7 @@ Testea para probar el comportamiento, no para probar la implementación
 - Validar que un Rover se puede mover hacia la izquierda estando en dirección E
 - Validar que un Rover se puede mover hacia la izquierda estando en dirección W
 - Imprimir un mapa de ubicación y dirección del Rover
+- Un Rover debe poder reaccionar a una serie de comandos (f,b,l,r)
 
 # Notas
 - Tiene sentido hasta cierto punto mantener la navegación tipo grilla porque aunque en un globo terráqueo los segmentos de posición en los polos no tienen 4 aristas sino 3 estos no es más que casos de un cuadrado especial en el que una de sus aristas tiende a tener una longitud cercana a cero, es cuestión de percepción (como la percepción del espacio/tiempo en la teoría de la relatividad)
