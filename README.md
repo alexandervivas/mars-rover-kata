@@ -21,7 +21,9 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Validar que al llegar a un borde, el Rover aparece en la segunda grilla que corresponde
+- Imprimir un mapa de ubicación del Rover
+- Indicar la dirección del Rover en el mapa
+- Validar que al llegar a un borde, el Rover aparece en la segunda grilla que corresponde (?)
 
 
 # Casos completados
