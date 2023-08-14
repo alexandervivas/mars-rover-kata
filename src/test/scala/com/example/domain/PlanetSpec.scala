@@ -23,13 +23,13 @@ class PlanetSpec extends AnyFunSuite with MockitoSugar {
 
   test("Un punto debe aparecer marcado en la cara opuesta del planeta si sus coordenadas son negativas") {
     val planet: Planet = Planet(5, 5)
-    val point: Point = Point(-3, -3)
+    val point: Point = Point(-2, -3)
 
     assertThat(planet.drawPoint(point)).isEqualTo(
       Seq(
         Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
         Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
-        Seq('.', '.', '.', '.', '.', ':', '.', '.', 'X', '.', '.'),
+        Seq('.', '.', '.', '.', '.', ':', '.', 'X', '.', '.', '.'),
         Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
         Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.')
       )
