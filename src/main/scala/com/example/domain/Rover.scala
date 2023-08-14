@@ -27,13 +27,20 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
       throw new InvalidCommandException
     }
 
-  def processCommands(commands: Seq[Char]): Rover =
-    commands match {
-      case Nil => this
-      case head :: tail =>
-        processCommand(head)
-          .processCommands(tail)
+  def processCommands(commands: Seq[Char]): Rover = {
+    val obstacleAhead: Boolean = true
+    if(obstacleAhead) {
+      println(s"Obstacle ahead detected, dropping the sequence of commands at coordinates: $coordinates")
+      this
+    } else {
+      commands match {
+        case Nil => this
+        case head :: tail =>
+          processCommand(head)
+            .processCommands(tail)
+      }
     }
+  }
 
   def turnLeft(): Rover = copy(direction = wheel.turnLeft.direction)
 
