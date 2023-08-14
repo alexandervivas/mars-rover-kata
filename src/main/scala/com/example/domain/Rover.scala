@@ -1,5 +1,7 @@
 package com.example.domain
 
+import com.example.exeptions.InvalidCommandException
+
 case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
 
   private lazy val wheel: Wheel = Wheel(direction)
@@ -9,13 +11,18 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
 
   def printMap: Seq[Seq[Char]] = plane.drawPoint(coordinates, direction.value)
 
-  private def processCommand(command: Char): Rover =
+  private def processCommand(command: Char): Rover = {
+    if(!Seq('f', 'b', 'r', 'l').contains(command)) {
+      throw new InvalidCommandException
+    }
+
     command match {
       case 'f' => moveForward()
       case 'b' => moveBackward()
       case 'r' => turnRight()
       case 'l' => turnLeft()
     }
+  }
 
   def processCommands(commands: Seq[Char]): Rover =
     commands match {
