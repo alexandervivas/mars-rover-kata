@@ -212,4 +212,20 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     }
   }
 
+  test("Un Rover debe abortar una serie de comandos al reconocer un obstáculo") {
+    val commands: Seq[Char] = Seq('f', 'l', 'f', 'l', 'f', 'f', 'r', 'b', 'r', 'f')
+
+    val rover: Rover = Rover(plane).processCommands(commands)
+
+    assertThat(rover.printMap).isEqualTo(
+      Seq(
+        Seq('.', '.', '.', '.', '.'),
+        Seq('.', '.', '.', '.', '.'),
+        Seq('.', '.', '↑', '.', '.'),
+        Seq('.', '.', '.', '.', '.'),
+        Seq('.', '.', '.', '.', '.')
+      )
+    )
+  }
+
 }

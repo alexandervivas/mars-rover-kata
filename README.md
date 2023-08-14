@@ -21,8 +21,6 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Un Plano debe poder contener obstáculos
-- Un Rover debe poder reconocer un obstáculo
 - Un Rover debe abortar una serie de comandos al reconocer un obstáculo
 
 
