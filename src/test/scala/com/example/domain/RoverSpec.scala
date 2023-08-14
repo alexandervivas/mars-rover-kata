@@ -1,5 +1,6 @@
 package com.example.domain
 
+import com.example.exeptions.InvalidCommandException
 import org.assertj.core.api.Assertions.assertThat
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatestplus.mockito.MockitoSugar
@@ -199,6 +200,16 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
         Seq('.', '.', '.', '.', '.')
       )
     )
+  }
+
+  test("Un Rover debe lanzar una excepción si recibe un comando desconocido") {
+    val commands: Seq[Char] = Seq('f', 'l', 'f', 'l', 'x', 'f', 'r', 'b', 'r', 'f')
+
+    val rover: Rover = Rover(plane)
+
+    intercept[InvalidCommandException] {
+      rover.processCommands(commands)
+    }
   }
 
 }
