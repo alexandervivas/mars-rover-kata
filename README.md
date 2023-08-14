@@ -21,7 +21,11 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Un Rover debe poder reaccionar con base en una serie de comandos
+- Un Rover debe poder reaccionar a una serie de comandos (f,b,l,r)
+- Un Rover debe lanzar una excepción si recibe un comando desconocido
+- Un Plano debe poder contener obstáculos
+- Un Rover debe poder reconocer un obstáculo
+- Un Rover debe abortar una serie de comandos al reconocer un obstáculo
 - 
 
 
