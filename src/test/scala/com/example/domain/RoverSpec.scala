@@ -173,6 +173,8 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
   }
 
   test("El Rover debe poder imprimir un mapa de su ubicación actual") {
+    val rover: Rover = Rover(abscissa, ordinate)
+
     assertThat(rover.printMap).isEqualTo(
       Seq(
         Seq('.', '.', '.', '.', '.'),

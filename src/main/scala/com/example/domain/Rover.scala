@@ -3,6 +3,9 @@ package com.example.domain
 case class Rover(abscissa: Seq[Int], ordinate: Seq[Int], coordinates: Point, direction: Direction) {
 
   private lazy val wheel: Wheel = Wheel(direction)
+  private lazy val map: Seq[Seq[Char]] = Seq.fill(abscissa.size)(Seq.fill(ordinate.size)('.'))
+
+  def printMap: Seq[Seq[Char]] = map.updated(coordinates.x - 1, map(coordinates.x - 1).updated(coordinates.y - 1, 'X'))
 
   def moveLeft(): Rover = copy(
     direction = wheel.turnLeft.direction
