@@ -188,7 +188,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
   test("Un Rover debe poder reaccionar a una serie de comandos (f,b,l,r)") {
     val commands: Seq[Char] = Seq('f', 'l', 'f', 'l', 'f', 'f', 'r', 'b', 'r', 'f')
 
-    val rover = Rover(plane).processCommands(commands)
+    val rover: Rover = Rover(plane).processCommands(commands)
 
     assertThat(rover.printMap).isEqualTo(
       Seq(

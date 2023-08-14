@@ -4,9 +4,22 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
 
   private lazy val wheel: Wheel = Wheel(direction)
 
-  println("\n\n" + printMap.map(_.mkString(" ")).mkString("\n") + "\n\n")
+  // log the current status in each step
+  println("\n" + printMap.map(_.mkString(" ")).mkString("\n") + "\n")
 
   def printMap: Seq[Seq[Char]] = plane.drawPoint(coordinates, direction.value)
+
+  def processCommands(commands: Seq[Char]): Rover = if(commands.isEmpty) {
+    this
+  } else {
+    (commands.head match {
+      case 'f' => moveForward()
+      case 'b' => moveBackward()
+      case 'r' => turnRight()
+      case 'l' => turnLeft()
+    })
+      .processCommands(commands.tail)
+  }
 
   def turnLeft(): Rover = copy(
     direction = wheel.turnLeft.direction
