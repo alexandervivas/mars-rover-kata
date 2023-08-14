@@ -21,7 +21,8 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Validar que al llegar a un borde, el Rover aparece en la segunda grilla que corresponde (?)
+- Un Rover debe poder reaccionar con base en una serie de comandos
+- 
 
 
 # Casos completados

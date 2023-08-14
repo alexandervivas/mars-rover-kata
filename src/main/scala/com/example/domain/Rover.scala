@@ -6,13 +6,13 @@ case class Rover(plane: Plane, coordinates: Point, direction: Direction) {
 
   def printMap: Seq[Seq[Char]] = plane.drawPoint(coordinates, direction.value)
 
-  def moveLeft(): Rover = copy(
+  def turnLeft(): Rover = copy(
     direction = wheel.turnLeft.direction
-  ).moveForward()
+  )
 
-  def moveRight(): Rover = copy(
+  def turnRight(): Rover = copy(
     direction = wheel.turnRight.direction
-  ).moveForward()
+  )
 
   def moveForward(): Rover = copy(
     coordinates = direction match {
