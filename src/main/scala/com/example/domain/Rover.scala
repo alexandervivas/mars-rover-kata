@@ -52,17 +52,15 @@ case class Rover(planet: Planet, coordinates: Point, direction: Direction = Dire
           direction = Direction.S
         )
       case Direction.N => copy(coordinates = coordinates.up)
-      case Direction.S =>
-        if(coordinates.longitude == planet.height) {
-          copy(
-            coordinates = coordinates.copy(coordinates.latitude - planet.width - 1, coordinates.longitude)
-          )
-        } else {
-          copy(coordinates = coordinates.down)
-        }
+      case Direction.S if atSouthPole => copy(coordinates = coordinates.copy(coordinates.latitude - planet.width - 1, coordinates.longitude))
+      case Direction.S => copy(coordinates = coordinates.down)
       case Direction.E => copy(coordinates = coordinates.right)
       case Direction.W => copy(coordinates = coordinates.left)
     }
+  }
+
+  private def atSouthPole: Boolean = {
+    coordinates.longitude == planet.height
   }
 
   private def atNorthPole: Boolean =
