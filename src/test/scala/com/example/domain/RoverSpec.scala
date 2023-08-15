@@ -508,4 +508,20 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
+  test("El Rover debe ser capaz de seguir un camino complejo") {
+    val commands: Seq[Char] = Seq('f', 'f', 'f', 'f', 'r', 'f', 'f', 'f', 'l', 'b', 'b', 'l', 'b', 'b', 'b', 'r', 'r', 'f', 'f', 'l', 'b')
+
+    val rover: Rover = Rover(planet, initialPoint).processCommands(commands)
+
+    assertThat(rover.printMap).isEqualTo(
+      Seq(
+        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
+        Seq('↑', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
+        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
+        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
+        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.')
+      )
+    )
+  }
+
 }
