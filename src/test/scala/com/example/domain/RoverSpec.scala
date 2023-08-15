@@ -238,7 +238,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Si el rover llega al polo norte debe reaparecer en la cara opuesta del planeta") {
+  test("Si el Rover yendo hacia adelante llega al polo norte debe reaparecer en la cara opuesta del planeta") {
     val rover: Rover = Rover(planet, initialPoint).moveForward().moveForward().moveForward()
 
     assertThat(rover.printMap).isEqualTo(
@@ -252,7 +252,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Si el rover llega al polo norte de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el polo sur") {
+  test("Si el Rover yendo hacia adelante llega al polo norte de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el polo sur") {
     val commands: Seq[Char] = Seq('f', 'f', 'f', 'f', 'f', 'f', 'f')
 
     val rover: Rover = Rover(planet, initialPoint).processCommands(commands)
@@ -268,7 +268,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Si el rover llega al polo sur debe reaparecer en la cara opuesta del planeta") {
+  test("Si el Rover yendo hacia adelante llega al polo sur debe reaparecer en la cara opuesta del planeta") {
     val commands: Seq[Char] = Seq('f', 'f', 'f')
 
     val rover: Rover = Rover(planet, initialPoint, Direction.South).processCommands(commands)
@@ -284,7 +284,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Si el Rover llega a la cara opuesta por el polo sur, debe cambiar su dirección hacia el norte") {
+  test("Si el Rover yendo hacia adelante llega a la cara opuesta por el polo sur, debe cambiar su dirección hacia el norte") {
     val commands: Seq[Char] = Seq('f', 'f', 'f')
 
     val rover: Rover = Rover(planet, initialPoint, Direction.South).processCommands(commands)
@@ -300,7 +300,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Si el Rover llega al polo sur de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el polo norte") {
+  test("Si el Rover yendo hacia adelante llega al polo sur de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el polo norte") {
     val commands: Seq[Char] = Seq('f', 'f', 'f', 'f', 'f', 'f', 'f')
 
     val rover: Rover = Rover(planet, initialPoint, Direction.South).processCommands(commands)
@@ -316,7 +316,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Si el rover llega al extremo este debe reaparecer en la cara opuesta del planeta por el oeste") {
+  test("Si el Rover yendo hacia adelante llega al extremo este debe reaparecer en la cara opuesta del planeta por el oeste") {
     val commands: Seq[Char] = Seq('f', 'f', 'f')
 
     val rover: Rover = Rover(planet, initialPoint, Direction.East).processCommands(commands)
@@ -332,7 +332,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Si el rover llega al extremo este de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo oeste de la cara frontal") {
+  test("Si el Rover yendo hacia adelante llega al extremo este de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo oeste de la cara frontal") {
     val commands: Seq[Char] = Seq('f', 'f', 'f', 'f', 'f', 'f', 'f')
 
     val rover: Rover = Rover(planet, initialPoint, Direction.East).processCommands(commands)
@@ -348,7 +348,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Si el rover llega al extremo oeste debe reaparecer en la cara opuesta del planeta por el este") {
+  test("Si el Rover yendo hacia adelante llega al extremo oeste debe reaparecer en la cara opuesta del planeta por el este") {
     val commands: Seq[Char] = Seq('f', 'f', 'f')
 
     val rover: Rover = Rover(planet, initialPoint, Direction.West).processCommands(commands)
@@ -364,7 +364,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Si el rover llega al extremo oeste de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo este de la cara frontal") {
+  test("Si el Rover yendo hacia adelante llega al extremo oeste de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo este de la cara frontal") {
     val commands: Seq[Char] = Seq('f', 'f', 'f', 'f', 'f', 'f', 'f', 'f')
 
     val rover: Rover = Rover(planet, initialPoint, Direction.West).processCommands(commands)
