@@ -52,7 +52,12 @@ case class Rover(planet: Planet, coordinates: Point, direction: Direction = Dire
       case Direction.South => copy(coordinates = coordinates.down)
       case Direction.East if atEastEnd => copy(coordinates = moveBetweenEnds)
       case Direction.East => copy(coordinates = coordinates.right)
-      case Direction.West => copy(coordinates = coordinates.left)
+      case Direction.West =>
+        if(coordinates.latitude == 1) {
+          copy(coordinates = coordinates.copy(planet.width, coordinates.longitude - planet.height - 1))
+        } else {
+          copy(coordinates = coordinates.left)
+        }
     }
 
   private def atEastEnd: Boolean = coordinates.latitude == planet.width
