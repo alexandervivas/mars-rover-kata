@@ -1,6 +1,6 @@
 package com.example.domain
 
-case class Point(latitude: Int, longitude: Int) {
+case class Point(latitude: Int, longitude: Int, side: Side = Side.Front) {
   def up: Point = copy(longitude = longitude - 1)
 
   def down: Point = copy(longitude = longitude + 1)
