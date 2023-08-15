@@ -46,25 +46,20 @@ case class Rover(planet: Planet, coordinates: Point, direction: Direction = Dire
 
   def moveForward(): Rover = {
     direction match {
-      case Direction.N if atNorthPole =>
-        copy(
-          coordinates = coordinates.copy(coordinates.latitude - planet.width - 1, coordinates.longitude),
-          direction = Direction.S
-        )
+      case Direction.N if atNorthPole => copy(coordinates = moveToTheOtherSide, direction = Direction.S)
       case Direction.N => copy(coordinates = coordinates.up)
-      case Direction.S if atSouthPole => copy(coordinates = coordinates.copy(coordinates.latitude - planet.width - 1, coordinates.longitude))
+      case Direction.S if atSouthPole => copy(coordinates = moveToTheOtherSide)
       case Direction.S => copy(coordinates = coordinates.down)
       case Direction.E => copy(coordinates = coordinates.right)
       case Direction.W => copy(coordinates = coordinates.left)
     }
   }
 
-  private def atSouthPole: Boolean = {
-    coordinates.longitude == planet.height
-  }
+  private def moveToTheOtherSide: Point = coordinates.copy(coordinates.latitude - planet.width - 1, coordinates.longitude)
 
-  private def atNorthPole: Boolean =
-    coordinates.longitude == 1
+  private def atSouthPole: Boolean = coordinates.longitude == planet.height
+
+  private def atNorthPole: Boolean = coordinates.longitude == 1
 
   def moveBackward(): Rover = copy(
     coordinates = direction match {
