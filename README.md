@@ -21,6 +21,10 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
+- Si el rover llega al extremo este debe reaparecer en la cara opuesta del planeta por el oeste
+- Si el rover llega al extremo este de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo oeste de la cara frontal
+- Si el rover llega al extremo oeste debe reaparecer en la cara opuesta del planeta por el este
+- Si el rover llega al extremo oeste de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo este de la cara frontal
 
 # Casos completados
 - Validar que un Rover se crea por defecto en el centro del plano en dirección norte
