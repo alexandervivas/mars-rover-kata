@@ -7,7 +7,8 @@ case class Rover(planet: Planet, coordinates: Point, direction: Direction = Dire
   private lazy val wheel: Wheel = Wheel(direction)
 
   // log the current status in each step
-  println("\n" + printMap.map(_.mkString(" ")).mkString("\n") + "\n")
+  println(coordinates)
+  println(printMap.map(_.mkString(" ")).mkString("\n") + "\n")
 
   def printMap: Seq[Seq[Char]] = planet.drawPoint(coordinates, direction.value)
 
@@ -52,7 +53,12 @@ case class Rover(planet: Planet, coordinates: Point, direction: Direction = Dire
       case Direction.South => copy(coordinates = coordinates.down)
       case Direction.East if atEastEnd => copy(coordinates = moveToTheWest)
       case Direction.East => copy(coordinates = coordinates.right)
-      case Direction.West if atWestEnd => copy(coordinates = moveToTheEast)
+      case Direction.West if atWestEnd =>
+        if(coordinates.latitude < 0 || coordinates.longitude < 0) {
+          copy(coordinates = coordinates.copy(latitude = planet.width, longitude = Math.abs(coordinates.longitude)))
+        } else {
+          copy(coordinates = moveToTheEast)
+        }
       case Direction.West => copy(coordinates = coordinates.left)
     }
 
