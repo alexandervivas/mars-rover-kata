@@ -1,5 +1,6 @@
 package com.example.domain
 
+import com.example.exeptions.InvalidCoordinatesException
 import org.assertj.core.api.Assertions.assertThat
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatestplus.mockito.MockitoSugar
