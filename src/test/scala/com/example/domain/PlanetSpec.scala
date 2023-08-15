@@ -21,19 +21,10 @@ class PlanetSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Un punto nunca debe contener coordenadas negativas") {
-    val planet: Planet = Planet(5, 5)
-    val point: Point = Point(-2, -3)
-
-    assertThat(planet.drawPoint(point)).isEqualTo(
-      Seq(
-        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
-        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
-        Seq('.', '.', '.', '.', '.', ':', '.', 'X', '.', '.', '.'),
-        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
-        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.')
-      )
-    )
+  test("Un punto nunca puede contener coordenadas negativas") {
+    intercept[InvalidCoordinatesException] {
+      Point(-2, -3)
+    }
   }
 
 }
