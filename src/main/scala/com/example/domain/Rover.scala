@@ -90,6 +90,7 @@ case class Rover(planet: Planet, coordinates: Point, direction: Direction = Dire
     direction match {
       case Direction.North if atSouthPole => copy(coordinates = moveBetweenPoles, direction = Direction.South)
       case Direction.North => copy(coordinates = coordinates.down)
+      case Direction.South if atNorthPole => copy(coordinates = moveBetweenPoles, direction = Direction.North)
       case Direction.South => copy(coordinates = coordinates.up)
       case Direction.East => copy(coordinates = coordinates.left)
       case Direction.West => copy(coordinates = coordinates.right)
