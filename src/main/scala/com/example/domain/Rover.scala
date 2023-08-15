@@ -2,7 +2,7 @@ package com.example.domain
 
 import com.example.exeptions.InvalidCommandException
 
-case class Rover(planet: Planet, coordinates: Point, direction: Direction = Direction.N, sensor: Sensor = Sensor()) {
+case class Rover(planet: Planet, coordinates: Point, direction: Direction = Direction.North, sensor: Sensor = Sensor()) {
 
   private lazy val wheel: Wheel = Wheel(direction)
 
@@ -44,16 +44,15 @@ case class Rover(planet: Planet, coordinates: Point, direction: Direction = Dire
 
   def turnRight(): Rover = copy(direction = wheel.turnRight.direction)
 
-  def moveForward(): Rover = {
+  def moveForward(): Rover =
     direction match {
-      case Direction.N if atNorthPole => copy(coordinates = moveToTheOtherSide, direction = Direction.S)
-      case Direction.N => copy(coordinates = coordinates.up)
-      case Direction.S if atSouthPole => copy(coordinates = moveToTheOtherSide)
-      case Direction.S => copy(coordinates = coordinates.down)
-      case Direction.E => copy(coordinates = coordinates.right)
-      case Direction.W => copy(coordinates = coordinates.left)
+      case Direction.North if atNorthPole => copy(coordinates = moveToTheOtherSide, direction = Direction.South)
+      case Direction.North => copy(coordinates = coordinates.up)
+      case Direction.South if atSouthPole => copy(coordinates = moveToTheOtherSide)
+      case Direction.South => copy(coordinates = coordinates.down)
+      case Direction.East => copy(coordinates = coordinates.right)
+      case Direction.West => copy(coordinates = coordinates.left)
     }
-  }
 
   private def moveToTheOtherSide: Point = coordinates.copy(coordinates.latitude - planet.width - 1, coordinates.longitude)
 
@@ -63,10 +62,10 @@ case class Rover(planet: Planet, coordinates: Point, direction: Direction = Dire
 
   def moveBackward(): Rover = copy(
     coordinates = direction match {
-      case Direction.N => coordinates.down
-      case Direction.S => coordinates.up
-      case Direction.E => coordinates.left
-      case Direction.W => coordinates.right
+      case Direction.North => coordinates.down
+      case Direction.South => coordinates.up
+      case Direction.East => coordinates.left
+      case Direction.West => coordinates.right
     }
   )
 

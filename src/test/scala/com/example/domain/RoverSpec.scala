@@ -18,16 +18,16 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     val rover: Rover = Rover(planet, initialPoint)
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.N)
+    assertThat(rover.direction).isEqualTo(Direction.North)
   }
 
   test("Validar que un Rover se puede crear con posición y dirección") {
     val point: Point = Point(2, 2)
 
-    val rover: Rover = Rover(planet, point, Direction.S)
+    val rover: Rover = Rover(planet, point, Direction.South)
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.S)
+    assertThat(rover.direction).isEqualTo(Direction.South)
   }
 
   test("Validar que un Rover se puede mover hacia adelante en dirección N") {
@@ -36,34 +36,34 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     val rover: Rover = Rover(planet, initialPoint).moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.N)
+    assertThat(rover.direction).isEqualTo(Direction.North)
   }
 
   test("Validar que un Rover se puede mover hacia adelante en dirección S") {
     val point: Point = Point(3, 4)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.S).moveForward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.South).moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.S)
+    assertThat(rover.direction).isEqualTo(Direction.South)
   }
 
   test("Validar que un Rover se puede mover hacia adelante en dirección E") {
     val point: Point = Point(4, 3)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.E).moveForward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.East).moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.E)
+    assertThat(rover.direction).isEqualTo(Direction.East)
   }
 
   test("Validar que un Rover se puede mover hacia adelante en dirección W") {
     val point: Point = Point(2, 3)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.W).moveForward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.West).moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.W)
+    assertThat(rover.direction).isEqualTo(Direction.West)
   }
 
   test("Validar que un Rover se puede mover hacia atrás estando en dirección N") {
@@ -72,34 +72,34 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     val rover: Rover = Rover(planet, initialPoint).moveBackward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.N)
+    assertThat(rover.direction).isEqualTo(Direction.North)
   }
 
   test("Validar que un Rover se puede mover hacia atrás estando en dirección S") {
     val point: Point = Point(3, 2)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.S).moveBackward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.South).moveBackward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.S)
+    assertThat(rover.direction).isEqualTo(Direction.South)
   }
 
   test("Validar que un Rover se puede mover hacia atrás estando en dirección E") {
     val point: Point = Point(2, 3)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.E).moveBackward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.East).moveBackward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.E)
+    assertThat(rover.direction).isEqualTo(Direction.East)
   }
 
   test("Validar que un Rover se puede mover hacia atrás estando en dirección W") {
     val point: Point = Point(4, 3)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.W).moveBackward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.West).moveBackward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.W)
+    assertThat(rover.direction).isEqualTo(Direction.West)
   }
 
   test("Validar que un Rover se puede mover hacia la derecha estando en dirección N") {
@@ -108,34 +108,34 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     val rover: Rover = Rover(planet, initialPoint).turnRight().moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.E)
+    assertThat(rover.direction).isEqualTo(Direction.East)
   }
 
   test("Validar que un Rover se puede mover hacia la derecha estando en dirección S") {
     val point: Point = Point(2, 3)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.S).turnRight().moveForward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.South).turnRight().moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.W)
+    assertThat(rover.direction).isEqualTo(Direction.West)
   }
 
   test("Validar que un Rover se puede mover hacia la derecha estando en dirección E") {
     val point: Point = Point(3, 4)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.E).turnRight().moveForward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.East).turnRight().moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.S)
+    assertThat(rover.direction).isEqualTo(Direction.South)
   }
 
   test("Validar que un Rover se puede mover hacia la derecha estando en dirección W") {
     val point: Point = Point(3, 2)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.W).turnRight().moveForward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.West).turnRight().moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.N)
+    assertThat(rover.direction).isEqualTo(Direction.North)
   }
 
   test("Validar que un Rover se puede mover hacia la izquierda estando en dirección N") {
@@ -144,34 +144,34 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     val rover: Rover = Rover(planet, initialPoint).turnLeft().moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.W)
+    assertThat(rover.direction).isEqualTo(Direction.West)
   }
 
   test("Validar que un Rover se puede mover hacia la izquierda estando en dirección S") {
     val point: Point = Point(4, 3)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.S).turnLeft().moveForward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.South).turnLeft().moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.E)
+    assertThat(rover.direction).isEqualTo(Direction.East)
   }
 
   test("Validar que un Rover se puede mover hacia la izquierda estando en dirección E") {
     val point: Point = Point(3, 2)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.E).turnLeft().moveForward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.East).turnLeft().moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.N)
+    assertThat(rover.direction).isEqualTo(Direction.North)
   }
 
   test("Validar que un Rover se puede mover hacia la izquierda estando en dirección W") {
     val point: Point = Point(3, 4)
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.W).turnLeft().moveForward()
+    val rover: Rover = Rover(planet, initialPoint, Direction.West).turnLeft().moveForward()
 
     assertThat(rover.coordinates).isEqualTo(point)
-    assertThat(rover.direction).isEqualTo(Direction.S)
+    assertThat(rover.direction).isEqualTo(Direction.South)
   }
 
   test("Imprimir un mapa de ubicación y dirección del Rover") {
@@ -271,7 +271,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
   test("Si el rover llega al polo sur debe reaparecer en la cara opuesta del planeta") {
     val commands: Seq[Char] = Seq('f', 'f', 'f')
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.S).processCommands(commands)
+    val rover: Rover = Rover(planet, initialPoint, Direction.South).processCommands(commands)
 
     assertThat(rover.printMap).isEqualTo(
       Seq(
@@ -287,7 +287,7 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
   test("Si el Rover llega a la cara opuesta por el polo sur, debe cambiar su dirección hacia el norte") {
     val commands: Seq[Char] = Seq('f', 'f', 'f')
 
-    val rover: Rover = Rover(planet, initialPoint, Direction.S).processCommands(commands)
+    val rover: Rover = Rover(planet, initialPoint, Direction.South).processCommands(commands)
 
     assertThat(rover.printMap).isEqualTo(
       Seq(
