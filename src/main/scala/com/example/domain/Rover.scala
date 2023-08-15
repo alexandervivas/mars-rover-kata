@@ -50,19 +50,23 @@ case class Rover(planet: Planet, coordinates: Point, direction: Direction = Dire
       case Direction.North => copy(coordinates = coordinates.up)
       case Direction.South if atSouthPole => copy(coordinates = moveBetweenPoles, direction = Direction.North)
       case Direction.South => copy(coordinates = coordinates.down)
-      case Direction.East if atEastEnd => copy(coordinates = moveBetweenEnds)
+      case Direction.East if atEastEnd => copy(coordinates = moveToTheWest)
       case Direction.East => copy(coordinates = coordinates.right)
-      case Direction.West =>
-        if(coordinates.latitude == 1) {
-          copy(coordinates = coordinates.copy(planet.width, coordinates.longitude - planet.height - 1))
-        } else {
-          copy(coordinates = coordinates.left)
-        }
+      case Direction.West if atWestEnd => copy(coordinates = moveToTheEast)
+      case Direction.West => copy(coordinates = coordinates.left)
     }
+
+  private def atWestEnd = {
+    coordinates.latitude == 1
+  }
+
+  private def moveToTheEast = {
+    coordinates.copy(planet.width, coordinates.longitude - planet.height - 1)
+  }
 
   private def atEastEnd: Boolean = coordinates.latitude == planet.width
 
-  private def moveBetweenEnds: Point = coordinates.copy(1, coordinates.longitude - planet.height - 1)
+  private def moveToTheWest: Point = coordinates.copy(1, coordinates.longitude - planet.height - 1)
 
   private def moveBetweenPoles: Point = coordinates.copy(coordinates.latitude - planet.width - 1, coordinates.longitude)
 
