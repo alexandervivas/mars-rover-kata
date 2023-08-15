@@ -396,8 +396,20 @@ class RoverSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Si el Rover yendo hacia atrás llega a la cara opuesta por el polo norte, el Rover debe aparecer en la otra cara del planeta y cambiar su dirección hacia el sur") {
+  test("Si el Rover yendo hacia atrás llega al polo norte de la cara opuesta del planeta y se sigue moviendo hacia atrás debe poder alcanzar el polo sur") {
+    val commands: Seq[Char] = Seq('b', 'b', 'b', 'b', 'b', 'b', 'b')
 
+    val rover: Rover = Rover(planet, initialPoint, Direction.South).processCommands(commands)
+
+    assertThat(rover.printMap).isEqualTo(
+      Seq(
+        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
+        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
+        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
+        Seq('.', '.', '.', '.', '.', ':', '.', '.', '.', '.', '.'),
+        Seq('.', '.', '.', '.', '.', ':', '.', '.', '↑', '.', '.')
+      )
+    )
   }
 
 }
