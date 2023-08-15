@@ -21,7 +21,8 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Si se llega a la cara opuesta por el polo sur, el Rover debe cambiar su dirección hacia el norte
+- Si el Rover llega a la cara opuesta por el polo sur, debe cambiar su dirección hacia el norte
+- Si el Rover llega al polo sur de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el polo norte
 
 # Casos completados
 - Validar que un Rover se crea por defecto en el centro del plano en dirección norte
