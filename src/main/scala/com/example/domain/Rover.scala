@@ -61,18 +61,16 @@ case class Rover(planet: Planet, coordinates: Point, direction: Direction = Dire
 
   private def moveToTheEast: Point =
     coordinates.copy(
-      planet.width,
-      Math.abs(coordinates.longitude - planet.height - 1),
-      Side.switch(coordinates.side)
+      latitude = planet.width,
+      side = Side.switch(coordinates.side)
     )
 
   private def atEastEnd: Boolean = coordinates.latitude == planet.width
 
   private def moveToTheWest: Point =
     coordinates.copy(
-      1,
-      Math.abs(coordinates.longitude - planet.height - 1),
-      Side.switch(coordinates.side)
+      latitude = 1,
+      side = Side.switch(coordinates.side)
     )
 
   private def moveBetweenPoles: Point =
