@@ -21,6 +21,7 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
+- El Rover debe ser capaz de seguir un camino complejo
 
 # Casos completados
 - Validar que un Rover se crea por defecto en el centro del plano en dirección norte
