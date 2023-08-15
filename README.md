@@ -21,7 +21,6 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Si el rover llega al extremo este de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo oeste de la cara frontal
 - Si el rover llega al extremo oeste debe reaparecer en la cara opuesta del planeta por el este
 - Si el rover llega al extremo oeste de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo este de la cara frontal
 
@@ -58,6 +57,7 @@ Testea para probar el comportamiento, no para probar la implementación
 - Si el Rover llega a la cara opuesta por el polo sur, debe cambiar su dirección hacia el norte
 - Si el Rover llega al polo sur de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el polo norte
 - Si el rover llega al extremo este debe reaparecer en la cara opuesta del planeta por el oeste
+- Si el rover llega al extremo este de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo oeste de la cara frontal
 
 # Notas
 - Tiene sentido hasta cierto punto mantener la navegación tipo grilla porque aunque en un globo terráqueo los segmentos de posición en los polos no tienen 4 aristas sino 3 estos no es más que casos de un cuadrado especial en el que una de sus aristas tiende a tener una longitud cercana a cero, es cuestión de percepción (como la percepción del espacio/tiempo en la teoría de la relatividad)
