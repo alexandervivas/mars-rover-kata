@@ -46,10 +46,27 @@ case class Rover(planet: Planet, coordinates: Point, direction: Direction = Dire
 
   def moveForward(): Rover = copy(
     coordinates = direction match {
-      case Direction.N => coordinates.up
+      case Direction.N =>
+        if(coordinates.longitude == 1) {
+          coordinates.copy(coordinates.latitude - planet.width - 1, -coordinates.longitude)
+        } else {
+          coordinates.up
+        }
+
       case Direction.S => coordinates.down
       case Direction.E => coordinates.right
       case Direction.W => coordinates.left
+    },
+    direction = direction match {
+      case Direction.N =>
+        if(coordinates.longitude == 1) {
+          Direction.S
+        } else {
+          Direction.N
+        }
+      case Direction.S => Direction.S
+      case Direction.E => Direction.E
+      case Direction.W => Direction.W
     }
   )
 
