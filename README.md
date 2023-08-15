@@ -21,7 +21,6 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Si el Rover yendo hacia atrás llega al extremo Oeste de la cara opuesta del planeta y se sigue moviendo hacia atrás debe poder alcanzar el extremo este de la cara frontal
 
 # Casos completados
 - Validar que un Rover se crea por defecto en el centro del plano en dirección norte
@@ -66,6 +65,7 @@ Testea para probar el comportamiento, no para probar la implementación
 - Si el Rover yendo hacia atrás llega al extremo Este, debe reaparecer en la cara opuesta del planeta por el oeste
 - Si el Rover yendo hacia atrás llega al extremo Este de la cara opuesta del planeta y se sigue moviendo hacia atrás debe poder alcanzar el extremo oeste de la cara frontal
 - Si el Rover yendo hacia atrás llega al extremo Oeste debe reaparecer en la cara opuesta del planeta por el este
+- Si el Rover yendo hacia atrás llega al extremo Oeste de la cara opuesta del planeta y se sigue moviendo hacia atrás debe poder alcanzar el extremo este de la cara frontal
 
 # Notas
 - Tiene sentido hasta cierto punto mantener la navegación tipo grilla porque aunque en un globo terráqueo los segmentos de posición en los polos no tienen 4 aristas sino 3 estos no es más que casos de un cuadrado especial en el que una de sus aristas tiende a tener una longitud cercana a cero, es cuestión de percepción (como la percepción del espacio/tiempo en la teoría de la relatividad)
