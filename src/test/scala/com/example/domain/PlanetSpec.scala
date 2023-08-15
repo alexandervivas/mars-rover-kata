@@ -21,7 +21,7 @@ class PlanetSpec extends AnyFunSuite with MockitoSugar {
     )
   }
 
-  test("Un punto debe aparecer marcado en la cara opuesta del planeta si sus coordenadas son negativas") {
+  test("Un punto nunca debe contener coordenadas negativas") {
     val planet: Planet = Planet(5, 5)
     val point: Point = Point(-2, -3)
 

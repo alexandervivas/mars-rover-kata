@@ -21,7 +21,7 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Si el rover llega al extremo oeste de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo este de la cara frontal
+- Un punto nunca puede contener coordenadas negativas
 
 # Casos completados
 - Validar que un Rover se crea por defecto en el centro del plano en dirección norte
@@ -48,9 +48,8 @@ Testea para probar el comportamiento, no para probar la implementación
 - Un Rover debe lanzar una excepción si recibe un comando desconocido
 - Un Rover debe abortar una serie de comandos al reconocer un obstáculo
 - El mapa debe incluir dos caras para representar el recorrido del Rover en ambas caras de un planeta
-- Un punto debe aparecer marcado en la cara opuesta del planeta si sus coordenadas son negativas
 - Si el rover llega al polo norte debe reaparecer en la cara opuesta del planeta
-- Si se llega a la cara opuesta por el polo norte, el Rover debe cambiar su dirección hacia el sur
+- Si el rover llega a la cara opuesta por el polo norte, el Rover debe cambiar su dirección hacia el sur
 - Si el rover llega al polo norte de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el polo sur
 - Si el rover llega al polo sur debe reaparecer en la cara opuesta del planeta
 - Si el Rover llega a la cara opuesta por el polo sur, debe cambiar su dirección hacia el norte
@@ -58,6 +57,7 @@ Testea para probar el comportamiento, no para probar la implementación
 - Si el rover llega al extremo este debe reaparecer en la cara opuesta del planeta por el oeste
 - Si el rover llega al extremo este de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo oeste de la cara frontal
 - Si el rover llega al extremo oeste debe reaparecer en la cara opuesta del planeta por el este
+- Si el rover llega al extremo oeste de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo este de la cara frontal
 
 # Notas
 - Tiene sentido hasta cierto punto mantener la navegación tipo grilla porque aunque en un globo terráqueo los segmentos de posición en los polos no tienen 4 aristas sino 3 estos no es más que casos de un cuadrado especial en el que una de sus aristas tiende a tener una longitud cercana a cero, es cuestión de percepción (como la percepción del espacio/tiempo en la teoría de la relatividad)
