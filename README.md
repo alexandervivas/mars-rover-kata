@@ -21,7 +21,16 @@ Testea para probar el comportamiento, no para probar la implementación
 
 
 # Casos pendientes
-- Un punto nunca puede contener coordenadas negativas
+- Si el Rover yendo hacia atrás llega al polo norte debe reaparecer en la cara opuesta del planeta
+- Si el Rover yendo hacia atrás llega a la cara opuesta por el polo norte, el Rover debe cambiar su dirección hacia el sur
+- Si el Rover yendo hacia atrás llega al polo norte de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el polo sur
+- Si el Rover yendo hacia atrás llega al polo sur debe reaparecer en la cara opuesta del planeta
+- Si el Rover yendo hacia atrás llega a la cara opuesta por el polo sur, debe cambiar su dirección hacia el norte
+- Si el Rover yendo hacia atrás llega al polo sur de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el polo norte
+- Si el Rover yendo hacia atrás llega al extremo este debe reaparecer en la cara opuesta del planeta por el oeste
+- Si el Rover yendo hacia atrás llega al extremo este de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo oeste de la cara frontal
+- Si el Rover yendo hacia atrás llega al extremo oeste debe reaparecer en la cara opuesta del planeta por el este
+- Si el Rover yendo hacia atrás llega al extremo oeste de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el extremo este de la cara frontal
 
 # Casos completados
 - Validar que un Rover se crea por defecto en el centro del plano en dirección norte
@@ -48,6 +57,7 @@ Testea para probar el comportamiento, no para probar la implementación
 - Un Rover debe lanzar una excepción si recibe un comando desconocido
 - Un Rover debe abortar una serie de comandos al reconocer un obstáculo
 - El mapa debe incluir dos caras para representar el recorrido del Rover en ambas caras de un planeta
+- Un punto nunca puede contener coordenadas negativas
 - Si el Rover yendo hacia adelante llega al polo norte debe reaparecer en la cara opuesta del planeta
 - Si el Rover yendo hacia adelante llega a la cara opuesta por el polo norte, el Rover debe cambiar su dirección hacia el sur
 - Si el Rover yendo hacia adelante llega al polo norte de la cara opuesta del planeta y se sigue moviendo hacia adelante debe poder alcanzar el polo sur
